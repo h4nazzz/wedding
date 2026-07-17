@@ -1,12 +1,12 @@
-  :root{
-    --maroon: #5c1a26;
-    --maroon-deep: #3f0f18;
-    --gold: #c79a3d;
-    --gold-light: #e8c887;
-    --ivory: #fbf3e3;
-    --green: #2e4436;
-    --blush: #f1e2c9;
-    --ink: #362016;
+:root{
+    --maroon: #6f9271;
+    --maroon-deep: #3c5940;
+    --gold: #c6a668;
+    --gold-light: #e3d3a4;
+    --ivory: #f7f9f2;
+    --green: #8caa87;
+    --blush: #e7efe1;
+    --ink: #3a4a3d;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,8 +30,18 @@
     pointer-events: none;
     z-index: 0;
     background-image:
-      radial-gradient(circle at 15% 20%, rgba(199,154,61,0.10) 0%, transparent 45%),
-      radial-gradient(circle at 85% 80%, rgba(92,26,38,0.08) 0%, transparent 45%);
+      radial-gradient(circle at 15% 20%, rgba(198,166,104,0.12) 0%, transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(111,146,113,0.10) 0%, transparent 45%);
+  }
+
+  /* Subtle Islamic geometric star pattern watermark */
+  .bg-texture::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    opacity:0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%233c5940' stroke-width='1'%3E%3Cpath d='M42 4 L57 21 L42 38 L27 21 Z'/%3E%3Cpath d='M42 46 L57 63 L42 80 L27 63 Z'/%3E%3Cpath d='M4 42 L21 27 L38 42 L21 57 Z'/%3E%3Cpath d='M46 42 L63 27 L80 42 L63 57 Z'/%3E%3Ccircle cx='42' cy='42' r='9'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
   }
 
   .frame{
@@ -66,7 +76,7 @@
   .hero-border{
     position:absolute;
     inset: 18px;
-    border: 1px solid rgba(199,154,61,0.55);
+    border: 1px solid rgba(198,166,104,0.55);
     pointer-events:none;
   }
   .hero-border::before,
@@ -79,6 +89,15 @@
   }
   .hero-border::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
   .hero-border::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+
+  .hero-border{
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23c6a668' stroke-width='1' opacity='0.55'%3E%3Cpath d='M20 3 L34 17 L20 31 L6 17 Z'/%3E%3Ccircle cx='20' cy='17' r='4'/%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23c6a668' stroke-width='1' opacity='0.55'%3E%3Cpath d='M20 3 L34 17 L20 31 L6 17 Z'/%3E%3Ccircle cx='20' cy='17' r='4'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 8px left 8px, bottom 8px right 8px;
+    background-size: 40px 40px, 40px 40px;
+  }
 
   .eyebrow{
     color: var(--maroon);
@@ -225,7 +244,7 @@
     content:'';
     position:absolute;
     inset: 8px;
-    border: 1px solid rgba(199,154,61,0.4);
+    border: 1px solid rgba(198,166,104,0.4);
     pointer-events:none;
   }
 
@@ -341,7 +360,7 @@
     align-items: center;
     justify-content: center;
     background:
-      radial-gradient(circle at 50% 50%, rgba(199,154,61,0.08) 0%, transparent 70%),
+      radial-gradient(circle at 50% 50%, rgba(198,166,104,0.10) 0%, transparent 70%),
       var(--maroon-deep);
     transition: opacity 1.2s ease, visibility 1.2s ease;
     padding: 24px;
@@ -500,17 +519,17 @@
   }
 
   .envelope-flap-left {
-    background: #4b121c;
+    background: #2c4230;
     clip-path: polygon(0 0, 50% 50%, 0 100%);
   }
 
   .envelope-flap-right {
-    background: #4b121c;
+    background: #2c4230;
     clip-path: polygon(100% 0, 50% 50%, 100% 100%);
   }
 
   .envelope-flap-bottom {
-    background: #541622;
+    background: #325036;
     clip-path: polygon(0 100%, 100% 100%, 50% 48%);
   }
 
@@ -541,7 +560,7 @@
   .envelope-flap-top-front {
     position: absolute;
     inset: -1px;
-    background: #5a1925;
+    background: #2f4a34;
     clip-path: polygon(0 0, 100% 0, 50% 55%);
     backface-visibility: hidden;
     z-index: 2;
@@ -590,7 +609,7 @@
     left: -38px;
     width: 76px;
     height: 76px;
-    background: radial-gradient(circle at 35% 35%, #e6a72e 0%, #ba8623 50%, #855f14 100%);
+    background: radial-gradient(circle at 35% 35%, #e3c98a 0%, #c6a668 50%, #8f7440 100%);
     border-radius: 48% 52% 47% 53% / 51% 49% 52% 48%;
     box-shadow: 
       0 4px 10px rgba(0,0,0,0.35),
