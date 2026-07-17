@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Are Invited — A Wedding Celebration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Cormorant:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wedding.css">
+</head>
+<body class="content">
+
+<div id="unveil">
+  <canvas id="ambient-canvas"></canvas>
+  
+  <div class="envelope-container">
+    <div class="envelope-wrapper">
+      <div class="envelope" id="envelope">
+        <!-- Inside Envelope Lining -->
+        <div class="envelope-lining"></div>
+        
+        <!-- The Card inside envelope -->
+        <div class="envelope-card" id="envelope-card">
+          <div class="card-monogram">A &amp; M</div>
+          <div class="card-divider">
+            <svg viewBox="0 0 100 10" fill="none"><line x1="0" y1="5" x2="40" y2="5" stroke="#c79a3d" stroke-width="0.8"/><circle cx="50" cy="5" r="2" fill="#5c1a26"/><line x1="60" y1="5" x2="100" y2="5" stroke="#c79a3d" stroke-width="0.8"/></svg>
+          </div>
+          <div class="card-title">You Are Invited</div>
+          <div class="card-names">Aravind &amp; Meera</div>
+        </div>
+        
+        <!-- Outer flaps -->
+        <div class="envelope-flap-left"></div>
+        <div class="envelope-flap-right"></div>
+        <div class="envelope-flap-bottom"></div>
+        
+        <!-- Top flap (3D rotating) -->
+        <div class="envelope-flap-top">
+          <div class="envelope-flap-top-front"></div>
+          <div class="envelope-flap-top-back"></div>
+        </div>
+        
+        <!-- Wax Seal (Clickable / Draggable) -->
+        <div class="wax-seal-wrapper" id="wax-seal-wrapper" role="button" tabindex="0" aria-label="Pull down or click wax seal to open invitation">
+          <div class="seal-pulse-ring" id="seal-pulse-ring"></div>
+          <div class="wax-seal-half left" id="seal-left">
+            <svg viewBox="0 0 100 100">
+              <path d="M 25 50 C 25 30, 75 30, 75 50 C 75 70, 25 70, 25 50" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+              <path d="M30 65 C25 55 25 45 30 35 C35 25 45 20 50 20 C55 20 65 25 70 35 C75 45 75 55 70 65" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+              <text x="50" y="58" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="rgba(255, 255, 255, 0.95)" text-anchor="middle">A&amp;M</text>
+            </svg>
+          </div>
+          <div class="wax-seal-half right" id="seal-right">
+            <svg viewBox="0 0 100 100">
+              <path d="M 25 50 C 25 30, 75 30, 75 50 C 75 70, 25 70, 25 50" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+              <path d="M30 65 C25 55 25 45 30 35 C35 25 45 20 50 20 C55 20 65 25 70 35 C75 45 75 55 70 65" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+              <text x="50" y="58" font-family="'Playfair Display', serif" font-size="28" font-weight="700" fill="rgba(255, 255, 255, 0.95)" text-anchor="middle">A&amp;M</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="unveil-instruction" id="unveil-instruction">Drag down or Tap the Wax Seal to Open</div>
+  </div>
+</div>
+
+<div class="bg-texture"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-border"></div>
+  <div class="frame" style="padding:0;">
+    <div class="eyebrow">You are cordially invited</div>
+
+    <div class="lamp-divider">
+      <svg viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 6 C 108 6 112 14 108 20 C 118 18 128 26 122 34 C 100 30 100 30 78 34 C 72 26 82 18 92 20 C 88 14 92 6 100 6 Z" fill="#c79a3d" opacity="0.9"/>
+        <line x1="0" y1="44" x2="82" y2="44" stroke="#c79a3d" stroke-width="1"/>
+        <line x1="118" y1="44" x2="200" y2="44" stroke="#c79a3d" stroke-width="1"/>
+        <circle cx="100" cy="44" r="4" fill="#5c1a26"/>
+      </svg>
+    </div>
+
+    <p class="invite-line">to the wedding of our beloved son and daughter</p>
+
+    <h1 class="names">
+      Aravind
+      <span class="amp">weds</span>
+      Meera
+    </h1>
+
+    <p class="hero-sub">With hearts full of joy, our families welcome you<br>to celebrate the union of two souls.</p>
+  </div>
+  <div class="scroll-hint">Scroll ↓</div>
+</section>
+
+<!-- BLESSING / FAMILIES -->
+<section>
+  <div class="frame">
+    <div class="lamp-divider">
+      <svg viewBox="0 0 160 20" fill="none"><line x1="0" y1="10" x2="60" y2="10" stroke="#c79a3d"/><circle cx="80" cy="10" r="3" fill="#5c1a26"/><line x1="100" y1="10" x2="160" y2="10" stroke="#c79a3d"/></svg>
+    </div>
+    <p class="section-title">With the Blessings of</p>
+    <p class="blessing">Together with our families, we joyfully invite you to be part of this sacred beginning, as our children promise forever to one another.</p>
+
+    <div class="parents">
+      <div class="side">Son of<strong>Mr. Ramesh Nair<br>&amp; Mrs. Sheela Nair</strong></div>
+      <div class="side">Daughter of<strong>Mr. Suresh Menon<br>&amp; Mrs. Latha Menon</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- DATE & TIME -->
+<section>
+  <div class="frame">
+    <div class="card">
+      <p class="section-title">Save the Date</p>
+      <div class="date-block">
+        <div class="date-item">
+          <div class="num">14</div>
+          <div class="label">December</div>
+        </div>
+        <div class="date-item">
+          <div class="num">2026</div>
+          <div class="label">Sunday</div>
+        </div>
+      </div>
+      <p class="time">Ceremony begins at <span>10:30 AM</span></p>
+      <p class="time" style="font-size:16px; margin-top:6px; color:#6b5844;">Reception to follow at 7:00 PM</p>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE + QR -->
+<section>
+  <div class="frame">
+    <div class="lamp-divider">
+      <svg viewBox="0 0 160 20" fill="none"><line x1="0" y1="10" x2="60" y2="10" stroke="#c79a3d"/><circle cx="80" cy="10" r="3" fill="#5c1a26"/><line x1="100" y1="10" x2="160" y2="10" stroke="#c79a3d"/></svg>
+    </div>
+    <p class="section-title">The Venue</p>
+    <p class="venue-name">Sree Krishna Convention Hall</p>
+    <p class="venue-address">Beach Road, Naduvannūr<br>Kozhikode, Kerala 673614</p>
+
+    <div class="qr-wrap">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://maps.google.com/?q=Naduvann%C5%ABr,Kerala" alt="QR code linking to the wedding venue location on Google Maps">
+    </div>
+    <div class="qr-caption">Scan for directions</div>
+    <br>
+    <a class="map-link" href="https://maps.google.com/?q=Naduvann%C5%ABr,Kerala" target="_blank" rel="noopener">Open location in Google Maps →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="glyph">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 6c2 0 3.5 2 2.5 4 3-1 6 2 4 5-6-1-6-1-13 0-2-3 1-6 4-5-1-2 0.5-4 2.5-4z" fill="#c79a3d"/></svg>
+  </div>
+  Your presence is the greatest gift of all.<br>We can't wait to celebrate with you.
+</footer>
+
+<p class="edit-note">This is a starting template — send me the real names, parents' names, date, time, and venue and I'll drop them in for you.</p>
+
+<script>
+  document.documentElement.classList.add('locked');
+
+  // Interactive Particle Canvas System
+  const canvas = document.getElementById('ambient-canvas');
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  function resizeCanvas() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  const particles = [];
+  const particleCount = 70; // 40 gold dust, 30 rose petals
+  const sparks = [];
+
+  class Particle {
+    constructor(type) {
+      this.type = type;
+      this.reset(true);
+    }
+    
+    reset(init = false) {
+      this.x = Math.random() * width;
+      this.y = init ? Math.random() * height : -20;
+      this.size = this.type === 'gold' ? Math.random() * 1.8 + 0.5 : Math.random() * 6 + 5;
+      
+      if (this.type === 'gold') {
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = -(Math.random() * 0.8 + 0.3); // float upwards
+        this.alpha = Math.random() * 0.6 + 0.2;
+        this.shimmerSpeed = Math.random() * 0.02 + 0.005;
+        this.shimmerPhase = Math.random() * Math.PI;
+      } else {
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = Math.random() * 0.8 + 0.5; // falls downwards
+        this.alpha = Math.random() * 0.4 + 0.45;
+        this.angle = Math.random() * Math.PI * 2;
+        this.spin = (Math.random() - 0.5) * 0.02;
+        this.sway = Math.random() * 0.6 + 0.3;
+        this.color = Math.random() > 0.4 ? 'rgba(235, 148, 163, ' : 'rgba(219, 90, 111, ';
+      }
+    }
+    
+    update(mouseX, mouseY, forceRadius) {
+      if (this.type === 'gold') {
+        this.y += this.vy;
+        this.x += this.vx;
+        this.alpha = 0.3 + Math.sin(Date.now() * this.shimmerSpeed + this.shimmerPhase) * 0.25;
+        
+        if (this.y < -10) this.y = height + 10;
+        if (this.x < -10) this.x = width + 10;
+        if (this.x > width + 10) this.x = -10;
+      } else {
+        this.y += this.vy;
+        this.x += this.vx + Math.sin(this.angle) * this.sway;
+        this.angle += this.spin;
+        
+        if (this.y > height + 10) this.reset();
+        if (this.x < -10) this.x = width + 10;
+        if (this.x > width + 10) this.x = -10;
+      }
+      
+      // Cursor displacement force
+      if (mouseX !== null && mouseY !== null) {
+        const dx = this.x - mouseX;
+        const dy = this.y - mouseY;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < forceRadius) {
+          const force = (forceRadius - dist) / forceRadius;
+          const angle = Math.atan2(dy, dx);
+          const pushPower = this.type === 'gold' ? 3.5 : 2.2;
+          this.x += Math.cos(angle) * force * pushPower;
+          this.y += Math.sin(angle) * force * pushPower;
+        }
+      }
+    }
+    
+    draw() {
+      ctx.save();
+      if (this.type === 'gold') {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(232, 200, 135, ${this.alpha})`;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = '#e8c887';
+        ctx.fill();
+      } else {
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, this.size * 1.2, this.size * 0.7, 0, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + this.alpha + ')';
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
+
+  class Spark {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 8 + 3;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+      this.size = Math.random() * 2 + 1;
+      this.alpha = 1.0;
+      this.decay = Math.random() * 0.02 + 0.015;
+    }
+    
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.vy += 0.12; // gravity
+      this.vx *= 0.95; // air drag
+      this.alpha -= this.decay;
+    }
+    
+    draw() {
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(244, 215, 144, ${this.alpha})`;
+      ctx.shadowBlur = 6;
+      ctx.shadowColor = '#e8c887';
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  // Populate particles
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle(i < 40 ? 'gold' : 'petal'));
+  }
+
+  let mouse = { x: null, y: null };
+  const interactionRadius = 120;
+
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+  window.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+      mouse.x = e.touches[0].clientX;
+      mouse.y = e.touches[0].clientY;
+    }
+  });
+  window.addEventListener('touchend', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  function spawnSparks(x, y) {
+    for (let i = 0; i < 45; i++) {
+      sparks.push(new Spark(x, y));
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    
+    particles.forEach(p => {
+      p.update(mouse.x, mouse.y, interactionRadius);
+      p.draw();
+    });
+    
+    for (let i = sparks.length - 1; i >= 0; i--) {
+      const s = sparks[i];
+      s.update();
+      if (s.alpha <= 0) {
+        sparks.splice(i, 1);
+      } else {
+        s.draw();
+      }
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Audio Synthesizer (Web Audio API)
+  function playUnsealSound() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      
+      // 1. Paper rustling sound (short burst of filtered noise)
+      const noiseBuffer = ctx.createBuffer(1, ctx.sampleRate * 0.2, ctx.sampleRate);
+      const noiseData = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < noiseBuffer.length; i++) {
+        noiseData[i] = Math.random() * 2 - 1;
+      }
+      
+      const noiseSource = ctx.createBufferSource();
+      noiseSource.buffer = noiseBuffer;
+      
+      const noiseFilter = ctx.createBiquadFilter();
+      noiseFilter.type = 'bandpass';
+      noiseFilter.frequency.setValueAtTime(800, ctx.currentTime);
+      noiseFilter.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.2);
+      
+      const noiseGain = ctx.createGain();
+      noiseGain.gain.setValueAtTime(0.05, ctx.currentTime);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+      
+      noiseSource.connect(noiseFilter);
+      noiseFilter.connect(noiseGain);
+      noiseGain.connect(ctx.destination);
+      
+      noiseSource.start();
+      noiseSource.stop(ctx.currentTime + 0.2);
+      
+      // 2. Chime harp/sweeps (C-major 7th arpeggio with pitch vibrato)
+      const now = ctx.currentTime;
+      const notes = [523.25, 659.25, 783.99, 987.77, 1046.50]; // C5, E5, G5, B5, C6
+      
+      notes.forEach((freq, idx) => {
+        const delay = idx * 0.08;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + delay);
+        
+        // LFO vibrato
+        const lfo = ctx.createOscillator();
+        const lfoGain = ctx.createGain();
+        lfo.frequency.value = 11; // 11Hz
+        lfoGain.gain.value = freq * 0.007; // subtle depth
+        lfo.connect(lfoGain);
+        lfoGain.connect(osc.frequency);
+        
+        gain.gain.setValueAtTime(0, now + delay);
+        gain.gain.linearRampToValueAtTime(0.12, now + delay + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.7);
+        
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        
+        lfo.start(now + delay);
+        osc.start(now + delay);
+        lfo.stop(now + delay + 0.7);
+        osc.stop(now + delay + 0.7);
+      });
+    } catch (e) {
+      console.warn("Web Audio API not allowed or supported:", e);
+    }
+  }
+
+  // 3D Envelope & Wax Seal drag and trigger logic
+  const sealWrapper = document.getElementById('wax-seal-wrapper');
+  const sealLeft = document.getElementById('seal-left');
+  const sealRight = document.getElementById('seal-right');
+  const pulseRing = document.getElementById('seal-pulse-ring');
+  const envelope = document.getElementById('envelope');
+  const envelopeCard = document.getElementById('envelope-card');
+  const unveilOverlay = document.getElementById('unveil');
+  const instructionText = document.getElementById('unveil-instruction');
+  const body = document.body;
+
+  let isDragging = false;
+  let startY = 0;
+  let currentDelta = 0;
+  let unveiled = false;
+
+  function onStart(e) {
+    if (unveiled) return;
+    isDragging = true;
+    startY = e.clientY || (e.touches && e.touches[0].clientY);
+    currentDelta = 0;
+    sealWrapper.style.transition = 'none';
+    if (pulseRing) pulseRing.style.opacity = '0';
+  }
+
+  function onMove(e) {
+    if (!isDragging || unveiled) return;
+    
+    // Stop window scrolling/bouncing during drag
+    if (e.cancelable) e.preventDefault();
+    
+    const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+    const deltaY = clientY - startY;
+    currentDelta = Math.max(0, deltaY);
+    
+    const visualDragY = Math.min(45, currentDelta * 0.5);
+    const wobble = Math.sin(currentDelta * 0.08) * 4;
+    sealWrapper.style.transform = `translate(-50%, calc(-50% + ${visualDragY}px)) rotate(${wobble}deg)`;
+    
+    if (pulseRing) {
+      pulseRing.style.transform = `scale(${1 + visualDragY * 0.01})`;
+    }
+  }
+
+  function onEnd() {
+    if (!isDragging || unveiled) return;
+    isDragging = false;
+    
+    if (currentDelta > 30) {
+      breakSeal();
+    } else {
+      sealWrapper.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      sealWrapper.style.transform = 'translate(-50%, -50%) rotate(0deg)';
+      if (pulseRing) {
+        pulseRing.style.opacity = '0.7';
+        pulseRing.style.transform = '';
+      }
+    }
+  }
+
+  function breakSeal() {
+    if (unveiled) return;
+    unveiled = true;
+    
+    // Play sound chimes
+    playUnsealSound();
+    
+    // Break wax seal halves apart
+    sealLeft.classList.add('split-left');
+    sealRight.classList.add('split-right');
+    if (pulseRing) pulseRing.style.display = 'none';
+    if (instructionText) instructionText.style.display = 'none';
+    
+    // Spark animation trigger
+    const rect = sealWrapper.getBoundingClientRect();
+    spawnSparks(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    
+    // Open envelope flap and slide card
+    envelope.classList.add('open');
+    
+    // Transition to main card zoom and fade overlay
+    setTimeout(() => {
+      envelopeCard.classList.add('zoom-card');
+      unveilOverlay.style.opacity = '0';
+      unveilOverlay.style.transition = 'opacity 1.2s ease';
+      
+      document.documentElement.classList.remove('locked');
+      body.classList.add('reveal');
+      window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    }, 1800);
+    
+    setTimeout(() => {
+      unveilOverlay.style.display = 'none';
+    }, 3000);
+  }
+
+  sealWrapper.addEventListener('mousedown', onStart);
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onEnd);
+
+  sealWrapper.addEventListener('touchstart', onStart, { passive: true });
+  window.addEventListener('touchmove', onMove, { passive: false });
+  window.addEventListener('touchend', onEnd);
+
+  // Click trigger fallback
+  sealWrapper.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (!unveiled) {
+      breakSeal();
+    }
+  });
+
+  // Keypress accessibility fallback
+  sealWrapper.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      breakSeal();
+    }
+  });
+</script>
+
+</body>
+</html>
