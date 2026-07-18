@@ -137,7 +137,7 @@
   }
   body.reveal .invite-line{ animation: fadeUp 1s ease forwards 0.5s; }
 
-  .names{
+  .names {
     font-family: 'Playfair Display', serif;
     font-weight: 100;
     font-size: clamp(20px, 5vw, 30px);
@@ -145,7 +145,11 @@
     color: var(--maroon-deep);
     margin: 14px 0;
     opacity: 0;
-  }
+
+    white-space: nowrap;      /* Keep text on one line */
+    overflow: hidden;         /* Hide overflow */
+    text-overflow: ellipsis;  /* Show ... if too long */
+}
   body.reveal .names{ animation: fadeUp 1.1s ease forwards 0.8s; }
 
   .names .amp{
