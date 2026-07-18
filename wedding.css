@@ -139,7 +139,7 @@
 
   .names{
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(20px, 5vw, 30px);
     line-height: 1.15;
     color: var(--maroon-deep);
