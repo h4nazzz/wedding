@@ -140,7 +140,7 @@
   .names{
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: clamp(24px, 6vw, 36px);
+    font-size: clamp(20px, 6vw, 36px);
     line-height: 1.15;
     color: var(--maroon-deep);
     margin: 14px 0;
